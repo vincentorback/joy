@@ -1,0 +1,37 @@
+@media print {
+  * {
+    background: none;
+    box-shadow: none;
+    color: #000;
+    text-shadow: none;
+  }
+
+  a {
+    text-decoration: underline;
+    border: 0 !important;
+    font-size: 1em;
+  }
+
+  .Sitehead-logo {
+    font-size: 16px !important
+  }
+
+  .Sitehead-title {
+    font-size: 40px !important;
+  }
+
+  .Sitehead-subtitle {
+    font-size: 24px !important;
+  }
+
+  .Product-header form,
+  .Sitefooter-links {
+    display: none;
+  }
+
+  #tt_colophon,
+  section,
+  .Product-images img {
+    page-break-before: always;
+  }
+}

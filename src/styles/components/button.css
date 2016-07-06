@@ -1,0 +1,24 @@
+.Button {
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+
+  padding: .5em 1em;
+
+  cursor: pointer;
+
+  border: 1px solid #000;
+  border-radius: .25em;
+  background: #fff;
+  color: #000;
+}
+
+
+.no-touchevents .Button {
+  transition: background 200ms ease, color 200ms ease;
+}
+
+.no-touchevents .Button:hover {
+  background: #000;
+  color: #fff
+}

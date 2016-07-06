@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html class="Site no-js" lang="en">
+<head prefix="og: http://ogp.me/ns#">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <!-- Theme made by: Vincent Orback - http://vincentorback.se -->
+
+  <title>
+  {{#list_page}}{{#navigation}}{{#is_current}}{{label}} – {{/is_current}}{{/navigation}}{{/list_page}}
+  {{#product_page}}{{#product}}{{title}} – {{/product}}{{/product_page}}
+  {{#about_page}}About – {{/about_page}}
+  {{store_name}}
+  </title>
+
+  <link href="/build/styles/style-min.css" rel="stylesheet">
+
+  <meta name="theme-color" content="#ffffff">
+</head>
+
+<body class="Site-body" id="page-{{#list_page}}{{#on_index}}front{{/on_index}}{{^on_index}}list{{/on_index}}{{/list_page}}{{#product_page}}product{{/product_page}}">
+
+  <header class="Sitehead{{#list_page}}{{#on_index}} Sitehead--large{{/on_index}}{{/list_page}}" role="banner">
+    <div class="Sitehead-inner">
+      <a href="{{store_url}}" class="Sitehead-logo">
+        <h1 class="Sitehead-title">{{store_name}}</h1>
+        <!-- <h2 class="Sitehead-subtitle">Optional subtitle</h2> -->
+      </a>
+    </div>
+  </header>
+
+  <nav class="Navigation" role="navigation">
+    <ul class="Navigation-list">
+      <li class="Navigation-item{{#on_index}} is-active{{/on_index}}">
+        <a class="Navigation-link" href="{{store_url}}"><span class="Navigation-linkInner">All</span></a>
+      </li>
+      {{#navigation}}
+      <li class="Navigation-item{{#is_current}} is-active{{/is_current}}">
+        <a class="Navigation-link" href="{{url}}"><span class="Navigation-linkInner">{{label}}</span></a>
+      </li>
+      {{/navigation}}
+      <li class="Navigation-item{{#about_page}} is-active{{/about_page}}">
+        <a class="Navigation-link" href="{{store_url}}/about"><span class="Navigation-linkInner">About</span></a>
+      </li>
+    </ul>
+  </nav>
+
+  <main class="Site-main" role="main">
+
+    {{#list_page}}
+    <div class="StoreGrid-wrapper">
+      <section class="StoreGrid StoreGrid--{{#products}}x{{/products}}">
+        {{#products}}<article class="StoreGrid-item" itemscope itemtype="http://schema.org/Product">
+          <a class="StoreGrid-itemLink" itemprop="url" href="{{absolute_url}}" {{#out_of_stock}}class="is-outOfStock"{{/out_of_stock}}>
+            <figure class="StoreGrid-itemImageWrap">
+              {{#primary_image}}
+              <img class="StoreGrid-itemImage" itemprop="image" src="{{url-500}}" srcset="{{url-500}} 500w, {{url-1000}}" alt="{{title}}">
+              {{/primary_image}}
+              <div class="StoreGrid-itemInfo">
+                <h1 class="StoreGrid-itemTitle" itemprop="name">{{title}}</h1>
+                <div itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+                  <h2 class="StoreGrid-itemPrice"><span itemprop="price">{{price_without_currency}}</span> <span class="StoreGrid-itemCurrency">:-</span>{{#out_of_stock}} <span class="StoreGrid-itemWarning">(Out of stock)</span>{{/out_of_stock}}</h2>
+                  <meta itemprop="priceCurrency" content="{{currency_code}}">
+                  {{#in_stock}}<link itemprop="availability" href="http://schema.org/InStock">{{/in_stock}}
+                  {{#out_of_stock}}<link itemprop="availability" href="http://schema.org/OutOfStock">{{/out_of_stock}}
+                </div>
+              </div>
+            </figure>
+          </a>
+        </article>{{/products}}
+      </section>
+    </div>
+    {{/list_page}}
+
+    {{#product_page}}
+    {{#product}}
+    <article class="Product Grid Grid--alignRight u-cf" itemscope itemtype="http://schema.org/Product">
+      <div id="product-content" class="Product-content Grid-cell">
+        <div class="Product-contentInner">
+          <header class="Product-header Entry">
+            <h1 class="Product-title" itemprop="name">{{title}}</h1>
+            <div class="Product-price" itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+              <span itemprop="price">{{{price_with_currency}}}</span>
+              <meta itemprop="priceCurrency" content="{{currency_code}}">
+              {{#in_stock}}<link itemprop="availability" href="http://schema.org/InStock">{{/in_stock}}
+              {{#out_of_stock}}<link itemprop="availability" href="http://schema.org/OutOfStock">{{/out_of_stock}}
+            </div>
+            {{#add_to_cart}}
+            {{#add_to_cart_button}}Add to cart{{/add_to_cart_button}}
+            <div class="Product-variations Product-variations--{{#variations}}x{{/variations}}">
+              <div class="Select">
+              {{#variations_select}}{{/variations_select}}
+              </div>
+            </div>
+            {{/add_to_cart}}
+          </header>
+          {{#out_of_stock}}
+          <div class="Product-info">
+            <p>Out of stock!</p>
+          </div>
+          {{/out_of_stock}}
+          <div class="Product-description Entry Entry--article" itemprop="description">
+            {{{description}}}
+          </div>
+        </div>
+      </div>
+      <figure id="product-images" class="Product-images Grid-cell">
+        {{#primary_image}}
+        {{#all_images}}
+        <img itemprop="image" src="{{url-1000}}" srcset="{{url-500}} 500w, {{url-1000}} 1900w, {{url-2000}}" alt="{{title}}">
+        {{/all_images}}
+        {{/primary_image}}
+      </figure>
+    </article>
+    {{/product}}
+    {{/product_page}}
+
+    {{#about_page}}
+      <div class="Wrapper Wrapper--S">
+        <article class="Entry Entry--article">
+          {{{store_description}}}
+        </article>
+      </div>
+    {{/about_page}}
+
+    {{^list_page}}
+    {{^product_page}}
+    {{^about_page}}
+    <div class="Wrapper Wrapper--S">
+      <article class="Entry Entry--article u-textCenter">
+        <h1>404</h1>
+        <h2>This page doesn't exist :(</h2>
+      </article>
+    </div>
+    {{/about_page}}
+    {{/product_page}}
+    {{/list_page}}
+  </main>
+
+  <footer class="Sitefooter" role="contentinfo">
+    <div>
+      {{#payment_alternatives}}<img src="{{logo}}" width="133" height="45" alt="">{{/payment_alternatives}}
+    </div>
+    <div>
+    {{#return_policy}}Return policy{{/return_policy}}
+    {{#terms}}Terms{{/terms}}
+    </div>
+  </footer>
+
+  <script src="/build/scripts/main-min.js" async></script>
+
+</body>
+</html>

@@ -1,0 +1,31 @@
+.Sitefooter {
+  position: relative;
+  text-align: center;
+
+  width: 100%;
+
+  border-top: 1px solid #eee;
+  background: #fff;
+  padding: 1em 0;
+
+  font-size: .8em;
+}
+
+@media (--md-viewport) {
+  .Sitefooter {
+    padding: 3em 0;
+  }
+}
+
+
+.Sitefooter a {
+  display: inline-block;
+  padding: .1em;
+  margin: 0 1em;
+  color: #999;
+  border-bottom: 2px solid transparent;
+}
+
+.Sitefooter a:hover {
+  border-bottom: 2px solid #999;
+}

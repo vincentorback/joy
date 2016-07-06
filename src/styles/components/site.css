@@ -1,0 +1,32 @@
+.Site {
+  height: 100%;
+  background: #fff;
+  font-family: var(--font-sansserif);
+  font-weight: 400;
+  font-size: 100%;
+  line-height: 1.5;
+  color: var(--color-text);
+  letter-spacing: 1px;
+}
+
+@include respond-min(800px) {
+  .Site {
+    letter-spacing: 2px;
+  }
+}
+
+.Site-body {
+
+}
+
+.Site-main {
+  width: 100%;
+  max-width: 3000px;
+  min-height: 50vh;
+
+  margin: 0 auto;
+
+  background: #fff;
+  position: relative;
+  z-index: 1;
+}

@@ -1,0 +1,89 @@
+.Navigation {
+  width: 100%;
+  margin: 0 auto;
+
+  background: #000;
+
+  font-weight: 500;
+  text-transform: uppercase;
+  text-align: center;
+  font-size: .6em;
+
+  padding: .5em 1em;
+}
+
+@media (--md-viewport) {
+  .Navigation {
+    width: 90%;
+
+    background: transparent;
+    padding: 1.5em 0;
+    font-size: 1em;
+    display: block;
+  }
+}
+
+@media (--lg-viewport) {
+  .Navigation {
+    font-size: 1.3em;
+  }
+}
+
+
+.Navigation-item {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.Navigation-link {
+  display: block;
+  padding: .5em .75em;
+  color: #fff;
+  letter-spacing: 0;
+}
+
+@media (--sm-viewport) {
+  .Navigation-link {
+    letter-spacing: 3px;
+    padding: .5em .85em;
+  }
+}
+
+@media (--md-viewport) {
+  .Navigation-link {
+    padding: 1em 1.5em;
+    color: var(--color-text);
+    border: 0;
+  }
+}
+
+
+@media (--md-viewport) {
+  .Navigation-linkInner {
+    padding: 0 3px 5px 3px;
+    border-bottom: 4px solid transparent;
+  }
+}
+
+
+/** States */
+
+.Navigation-item.is-active .Navigation-linkInner {
+  color: #fff;
+}
+
+@media (--md-viewport) {
+  .Navigation-link:hover {
+    color: var(--color-text);
+  }
+  .Navigation-link:hover .Navigation-linkInner {
+    border-color: var(--color-text);
+    transition: border 150ms ease;
+  }
+
+  .Navigation-item.is-active .Navigation-linkInner {
+    padding: 0 3px 5px 3px;
+    border-color: var(--color-text);
+    color: var(--color-text);
+  }
+}

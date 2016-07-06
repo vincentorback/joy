@@ -1,0 +1,75 @@
+*,
+*:after,
+*:before {
+  box-sizing: border-box;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+::selection {
+  background: #000;
+  color: #fff;
+}
+
+.touchevents input,
+.touchevents textarea,
+.touchevents select,
+.touchevents button {
+  font-size: 16px !important;
+}
+
+button,
+input,
+select,
+textarea {
+  background: transparent;
+  font-size: 100%;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+ul,
+ol {
+  margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: 1em;
+  line-height: 1.2;
+  font-weight: 500;
+}
+
+ul, ol {
+  list-style: none;
+  padding: 0;
+}
+
+strong, b {
+  font-weight: 500;
+}
+
+em, i {
+  font-style: italic;
+}
+
+a {
+  color: var(--color-text);
+  text-decoration: none;
+  cursor: pointer;
+  &:hover {
+    text-decoration: none;
+  }
+}

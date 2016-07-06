@@ -1,0 +1,60 @@
+/** Base styles **/
+@import "base/normalize";
+@import "base/base";
+@import "base/animations";
+
+/** Components **/
+@import "components/button";
+@import "components/entry";
+@import "components/grid";
+@import "components/navigation";
+@import "components/product";
+@import "components/select";
+@import "components/sitefooter";
+@import "components/sitehead";
+@import "components/store-grid";
+@import "components/wrapper";
+
+/** Print **/
+@import "base/print";
+
+@custom-media --xs-viewport (min-width: 300px);
+@custom-media --sm-viewport (min-width: 600px);
+@custom-media --md-viewport (min-width: 800px);
+@custom-media --lg-viewport (min-width: 1200px);
+@custom-media --xl-viewport (min-width: 1600px);
+
+:root {
+  --color-red: red;
+  --color-text: #222;
+  --font-sansserif: Futura, Futura-Medium, "Futura Medium", "Century Gothic", CenturyGothic, "Lucida Grande", arial, sans-serif;
+}
+
+/** Tictail specific classes **/
+
+.tictail_button {
+  @extend .Button;
+}
+.tictail_add_to_cart {
+  /*@extend .Product-addToCart;*/
+}
+.tictail_add_to_cart_button {
+  @extend .Product-addToCartButton;
+}
+.tictail_fullscreen_overlay {
+  opacity: .5;
+}
+.tictail_social_button {
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 5px;
+}
+.tictail_social_button span {
+  vertical-align: top !important;
+}
+#twitter-widget-0 {
+  width: 60px !important;
+}
+.tictail_embed_button {
+  display: none;
+}

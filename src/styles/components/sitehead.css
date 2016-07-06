@@ -1,0 +1,91 @@
+.Sitehead {
+  position: relative;
+}
+
+.Sitehead-inner {
+  padding: 10% 0 5%;
+  text-align: center;
+}
+
+@media (--xs-viewport) {
+  .Sitehead-inner {
+    padding: 40px 0 15px;
+  }
+}
+
+@media (--md-viewport) {
+  .Sitehead-inner {
+    padding: 5% 0;
+    background: transparent;
+  }
+}
+
+.Sitehead-logo {
+  display: block;
+  width: 100%;
+}
+
+.Sitehead-title,
+.Sitehead-subtitle {
+  line-height: 1.3;
+}
+
+.Sitehead-title {
+  font-size: 1.5em;
+}
+
+@media (--sm-viewport) {
+  .Sitehead-title {
+    font-size: 2.5em;
+  }
+}
+@media (--md-viewport) {
+  .Sitehead-title {
+    font-size: 4.5em;
+    margin-bottom: .2em;
+  }
+}
+@media (--lg-viewport) {
+  .Sitehead-title {
+    font-size: 7em;
+  }
+}
+@media (--xl-viewport) {
+  .Sitehead-title {
+    font-size: 10em;
+  }
+}
+
+@media (--md-viewport) {
+  .Sitehead-subtitle {
+    font-size: 1.5em;
+  }
+}
+@media (--xl-viewport) {
+  .Sitehead-subtitle {
+    font-size: 2em;
+  }
+}
+
+
+
+@media (--md-viewport) {
+  .Sitehead--large .Sitehead-inner {
+    padding: 13% 0;
+  }
+}
+
+@media (--lg-viewport) {
+  /*.Sitehead--large .Sitehead-title {
+    animation: fadeInBottom 1000ms ease 1;
+  }
+  .Sitehead--large .Sitehead-subtitle {
+    animation: fadeInTop 1200ms ease 1;
+  }*/
+}
+
+@media (--xl-viewport) {
+  .Sitehead--large .Sitehead-inner {
+    padding: 10% 0;
+  }
+}

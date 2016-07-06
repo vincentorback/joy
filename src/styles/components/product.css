@@ -1,0 +1,147 @@
+.Product .Sitemain {
+  max-width: 2560px;
+}
+
+.Product-images {
+  margin: 0 auto;
+}
+
+.Product-images img {
+  display: block;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 2000px;
+}
+
+@media (--md-viewport) {
+  .Product-images {
+    width: 50%;
+  }
+
+  .Product-images img {
+    margin-bottom: 50px;
+  }
+}
+
+@media (--lg-viewport) {
+  .Product-images {
+    width: 60%;
+  }
+}
+
+.Product-content {
+  position: static;
+  width: 90%;
+  max-width: 800px;
+  display: block;
+
+  margin: 5% auto;
+}
+
+@media (--md-viewport) {
+  .Product-content {
+    top: 0;
+    z-index: 1;
+
+    margin: 0 auto;
+
+    width: 40%;
+    float: left;
+  }
+
+  .Product-content.is-sticky {
+    position: sticky;
+  }
+}
+
+@media (--lg-viewport) {
+  .Product-content {
+    width: 30%;
+  }
+}
+
+@media (--md-viewport) {
+  .Product-contentInner {
+    margin-left: 10%;
+  }
+}
+
+.Product-header:after {
+  display: block;
+  clear: both;
+  content: "";
+}
+
+.Product-title {
+  font-size: 2em;
+  margin-bottom: .1em;
+}
+
+@media (--lg-viewport) {
+  .Product-title {
+    font-size: 2.5em;
+  }
+}
+
+.Product-price {
+  letter-spacing: 5px;
+  font-size: 1.2em;
+}
+
+.Product-info,
+.Product-description,
+.Product-variations,
+.Product-outOfStock {
+  margin-top: 2rem;
+}
+
+.Product-info {
+  color: var(--color-red);
+}
+
+@media (min-width: 320px) and (max-width: 800px) {
+  .Product-addToCartButton,
+  .Product-variations {
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: .5em;
+  }
+}
+
+.Product-addToCartButton {
+  margin-top: 2rem;
+}
+
+.Product-variations {
+  margin-top: 1rem;
+}
+.Product-variations .Product-variations--,
+.Product-variations .Product-variations--x {
+  display: none; /* If node or just one variation, no need for this. */
+  visibility: hidden;
+}
+
+.Product-description {
+  width: 100%;
+  padding: 0;
+  margin-top: 2rem;
+}
+.Product-description ul {
+  list-style: none;
+  margin: 1rem 0;
+}
+
+.Product-description li {
+  margin-bottom: .5em;
+}
+
+@media (--md-viewport) {
+  .Product-description {
+    padding-bottom: 50px;
+  }
+}
+
+.Product-outOfStock {
+  color: var(--color-red);
+  font-size: 1.2em;
+}

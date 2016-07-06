@@ -1,0 +1,9 @@
+.Wrapper {
+  position: relative;
+  width: 90%;
+  margin: 0 auto;
+}
+
+.Wrapper--S {
+  max-width: 760px;
+}

@@ -1,0 +1,186 @@
+:root {
+  --StoreGrid-gutter-size: 2%;
+}
+
+.StoreGrid {
+  position: relative;
+  width: 100%;
+  margin-top: var(--StoreGrid-gutter-size);
+}
+
+@media (--md-viewport) {
+  .StoreGrid {
+    margin-top: 0;
+  }
+}
+
+.StoreGrid:after {
+  display: block;
+  clear: both;
+  content: "";
+}
+
+@media (min-width: 320px) and (max-width: 800px) {
+  .StoreGrid-item {
+    width: 49%;
+  }
+}
+
+@media (--md-viewport) {
+  .StoreGrid-item {
+    width: 32%;
+  }
+}
+
+.StoreGrid-wrapper {
+  padding: 0 var(--StoreGrid-gutter-size);
+}
+
+.StoreGrid-item {
+  margin-bottom: var(--StoreGrid-gutter-size);
+}
+
+@media (--xs-viewport) {
+  .StoreGrid-item {
+    display: inline-block;
+    vertical-align: middle;
+
+    margin-right: var(--StoreGrid-gutter-size);
+  }
+}
+
+@media (min-width: 320px) and (max-width: 800px) {
+  .StoreGrid-item:nth-child(2n) {
+    margin-right: 0;
+  }
+}
+
+@media (--md-viewport) {
+  .StoreGrid-item:nth-of-type(3n) {
+    margin-right: 0;
+  }
+}
+
+.StoreGrid-itemLink {
+  display: block;
+}
+
+
+.StoreGrid-itemImageWrap {
+  position: relative;
+  overflow: hidden;
+
+  width: 100%;
+  display: inline-block;
+  vertical-align: middle;
+  margin: 0 auto;
+}
+
+
+.StoreGrid-itemImage {
+  display: block;
+  margin: 0 auto;
+
+  max-width: 100%;
+  max-height: 100%;
+
+  width: 100%;
+  height: auto;
+}
+
+.no-touchevents .StoreGrid-itemImage {
+  transform: translateZ(0);
+  transform-style: preserve-3d;
+  transition: transform 200ms ease;
+}
+
+
+.StoreGrid-itemInfo {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+
+  padding: 3em .9em .75em;
+  background: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0.02) 20%, rgba(0,0,0,.25));
+  background-repeat: no-repeat;
+
+  color: #fff;
+  font-size: .8em;
+  text-align: left;
+}
+
+@media (--sm-viewport) {
+  .StoreGrid-itemInfo {
+    font-size: 1em;
+  }
+}
+
+@media (--xl-viewport) {
+  .StoreGrid-itemInfo {
+    font-size: 1.5em;
+  }
+}
+
+.no-rgba .StoreGrid-itemInfo {
+  padding: .75em .75em 0;
+
+  background: #fff;
+  color: var(--color-text);
+}
+
+.StoreGrid-itemTitle {
+  margin-bottom: .2em;
+  font-size: 1.2em;
+  font-weight: 500;
+}
+
+.StoreGrid-itemPrice {
+  font-weight: 400;
+}
+
+.StoreGrid-itemCurrency {
+  position: relative;
+  top: -.1em;
+  left: -.15em;
+}
+
+.StoreGrid-itemWarning {
+  font-size: .75em;
+  opacity: .8;
+}
+
+
+/**
+ * States
+**/
+.no-touchevents .StoreGrid-item:hover .StoreGrid-itemImage {
+  transform: scale(1.05);
+}
+
+.StoreGrid--x .StoreGrid-item,
+.StoreGrid--xx .StoreGrid-item,
+.StoreGrid--xxxx .StoreGrid-item {
+  width: 49%;
+  margin-right: var(--StoreGrid-gutter-size);
+}
+
+.StoreGrid--x .StoreGrid-item:nth-child(2n),
+.StoreGrid--xx .StoreGrid-item:nth-child(2n),
+.StoreGrid--xxxx .StoreGrid-item:nth-child(2n) {
+  margin-right: 0;
+}
+
+.StoreGrid--x .StoreGrid-item {
+  margin: 0 auto 2%;
+  display: block;
+}
+
+.StoreGrid--xxx .StoreGrid-item {
+  width: 32%;
+  margin-right: var(--StoreGrid-gutter-size);
+}
+
+.StoreGrid--xxx .StoreGrid-item:nth-child(3n) {
+  margin-right: 0;
+}
